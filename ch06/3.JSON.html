@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.JSON</title>
+     <!--
+        날짜 : 2025/02/17
+        이름 : 박정원
+        내용 : 자바스크립트 JSON 실습하기
+    -->
+</head>
+<body>
+    <h3>3.JSON</h3>
+    <script>
+        //Json 생성
+
+    const user={
+        "uid":"a101",
+        "name":"김유신",
+        "age":"23",
+        "addr":"김해시"
+    };
+
+    document.write('user : ' + user);
+    document.write('user.uid : ' + user + '<br>');
+    document.write('user.name : ' + user.uid + '<br>');
+    document.write('user.age : ' + user.age + '<br');
+    document.write('user.addr : ' + user.addr + '<br>');
+
+    // JSON 배열
+    const jsonArr = {"users":[
+        {"uid":"a101", "name":"김유신", "age":"23", "addr":"김해"}, 
+        {"uid":"a102", "name":"김춘추", "age":"21", "addr":"경주"}, 
+        {"uid":"a103", "name":"장보고", "age":"33", "addr":"완도"}, 
+        {"uid":"a104", "name":"강감찬", "age":"45", "addr":"서울"}, 
+        {"uid":"a105", "name":"이순신", "age":"53", "addr":"부산"} 
+    ]};
+
+    for(const user of jsonArr.users){
+        document.write('<p>');
+        document.write('uid : ' + user.uid + '<br>');
+        document.write('name : ' + user.name + '<br>');
+        document.write('age : ' + user.age + '<br>');
+        document.write('addr : ' + user.addr + '<br>');
+        document.write('</p>:');
+    }
+
+    // JSON stringify() 함수 - JSON을 문자열로 변환
+    document.write('user : ' + user + '<br>');
+    document.write('jsonArr : ' + jsonArr + '<br>');
+    
+
+    const strUser = JSON.stringify(user);
+    const strArr = JSON.stringify(jsonArr);
+
+    document.write('strUser : ' + strUser + '<br>');
+    document.write('strArr : ' + strArr + '<br>');
+
+    // JSON.parse() 함수 - JSON 형식을 갖춘 문자열을 JSON으로 변환
+    const parsedUser = JSON.parse(strUser);
+    const parsedArr = JSON.parse(strArr);
+
+    document.write('parsedUser.uid : ' + parsedUser.uid + '<br>');
+    document.write('parsedUser.name : ' + parsedUser.name + '<br>');
+    document.write('parsedUser.age : ' + parsedUser.age + '<br>');
+    document.write('parsedUser.addr : ' + parsedUser.addr + '<br>');
+    
+
+
+
+    </script>
+    
+</body>
+</html>
